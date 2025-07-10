@@ -17,7 +17,7 @@ async function sendEmail(to, body) {
       sentEmails.add(key);
       return 'Sent via Provider 1';
     } catch (e) {
-      await wait(exponentialBackoff(attempt));
+      //await wait(exponentialBackoff(attempt));
       attempt++;
     }
   }
