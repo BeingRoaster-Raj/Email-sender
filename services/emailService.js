@@ -1,6 +1,6 @@
 const provider1 = require('../providers/provider1');
 const provider2 = require('../providers/provider2');
-const { wait, exponentialBackoff } = require('../utils/backoff');
+// const { wait, exponentialBackoff } = require('../utils/backoff');
 
 const sentEmails = new Set();
 
