@@ -1,6 +1,6 @@
 const provider1 = require('../providers/provider1');
 const provider2 = require('../providers/provider2');
-// const { wait, exponentialBackoff } = require('../utils/backoff');
+const { wait, exponentialBackoff } = require('../backoff');
 
 const sentEmails = new Set();
 
@@ -17,7 +17,7 @@ async function sendEmail(to, body) {
       sentEmails.add(key);
       return 'Sent via Provider 1';
     } catch (e) {
-      //await wait(exponentialBackoff(attempt));
+      await wait(exponentialBackoff(attempt));
       attempt++;
     }
   }
