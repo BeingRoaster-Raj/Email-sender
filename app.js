@@ -8,12 +8,15 @@ app.use(express.json());
 app.post('/send', async (req, res) => {
   const { to, body, userId } = req.body;
 
-  if (isRateLimited(userId)) {
-    return res.status(429).send('Rate limit exceeded');
-  }
+  // if (isRateLimited(userId)) {
+  //   return res.status(429).send('Rate limit exceeded');
+  // }
 
   const result = await sendEmail(to, body);
   res.send(result);
 });
 
-app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+// app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
