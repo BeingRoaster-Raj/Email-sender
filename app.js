@@ -1,6 +1,6 @@
 const express = require('express');
 const { sendEmail } = require('./services/emailService');
-const { isRateLimited } = require('./utils/rateLimiter');
+// const { isRateLimited } = require('./utils/rateLimiter');
 
 const app = express();
 app.use(express.json());
